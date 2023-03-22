@@ -1,0 +1,12 @@
+version: '2.2'
+
+services:
+  wireguardbase:
+    build: .
+    image: ismael49/wireguardbase:v1
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    volumes:
+      - ./conf/freyja.conf:/etc/wireguard/freyja.conf:ro
+
